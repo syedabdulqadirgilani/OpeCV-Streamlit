@@ -11,14 +11,14 @@ from PIL import Image  # PIL Image for display / conversion
 # import io for in-memory byte streams (for download buttons)
 import io  # handle in-memory bytes for downloads
 # import a sample image from scikit-image to use when no file is uploaded
-from skimage import data  # scikit-image sample datasets (astronaut etc.)
+from skimage import data  # scikit-image sample datasets (Chelsea etc.)
 
 # configure the Streamlit page title and layout
 st.set_page_config(page_title="OpenCV Image Effects", layout="wide")  # set page title and wide layout
 # show the main title of the app
 st.title("OpenCV Image Effects (Grayscale, Blur & Edge Detection)")  # app heading
 # short instruction for the user
-st.markdown("Upload an image or use the sample image (Astronaut) to try effects.")  # short description
+st.markdown("Upload an image or use the sample image (Chelsea) to try effects.")  # short description
 
 # file uploader widget for user to upload images (jpg/png)
 uploaded = st.file_uploader("Upload an image (jpg/png)", type=["jpg", "jpeg", "png"])  # file uploader
@@ -108,3 +108,4 @@ for name, img in results.items():  # iterate over result name and BGR image
 # If no effects selected, give a small hint to the user
 if not results:  # if results dict is empty (no checkboxes selected)
     st.warning("No effects selected. Please tick Grayscale, Blur, or Edge Detection to see results.")  # user hint
+
